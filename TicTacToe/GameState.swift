@@ -12,6 +12,7 @@ class GameState: ObservableObject {
     @Published var turn = Tile.circle
     @Published var winner = ""
     @Published var alert = false
+    @Published var gameType = "Solo"
     
     init() {
         resetBoard()
@@ -123,5 +124,10 @@ class GameState: ObservableObject {
         }
         board = newBoard
         winner = ""
+        gameType = ""
+    }
+    
+    func changeGameType(type: String){
+        gameType = type
     }
 }

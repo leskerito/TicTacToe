@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct TicTacGridView: View {
-    @StateObject var gameState = GameState()
+    @StateObject var gameState: GameState
     @State private var orientation = UIDeviceOrientation.unknown
     
     let borderSize = CGFloat(5)
@@ -59,4 +59,8 @@ struct TicTacGridView: View {
             orientation = newOrientation
         }
     }
+}
+
+#Preview {
+    TicTacGridView(gameState: GameState())
 }
