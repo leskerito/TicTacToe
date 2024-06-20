@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct TicTacGridView: View {
-    @StateObject var gameState = GameState()
+    @StateObject var gameState: GameState
     @State private var orientation = UIDeviceOrientation.unknown
     
     let borderSize = CGFloat(5)
@@ -19,7 +19,6 @@ struct TicTacGridView: View {
         VStack (spacing: borderSize){
             ForEach(0...2, id:\.self) {
                 row in
-                
                 HStack(spacing: borderSize){
                     ForEach(0...2, id:\.self) {
                         
@@ -36,7 +35,7 @@ struct TicTacGridView: View {
                             .background()
                         
                             .onTapGesture {
-                                gameState.placeTile(row, column)
+                                gameState.placeTilePlayer(row, column)
                             }
                         
                     }
@@ -44,19 +43,37 @@ struct TicTacGridView: View {
             }
         }
         .background(Color.black)
-        .padding()
+        .padding(30)
         .alert(
             Text(gameState.winner),
-            isPresented: $gameState.alert,
+            isPresented: $gameState.endAlert,
             presenting: gameState.winner
         ) { _ in
             Button("One More!"){
+                gameState.oneMore()
+            }
+            Button("Change mode"){
                 gameState.resetBoard()
             }
         }
-        .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        .alert(
+            "How do you wanna play?",
+            isPresented: $gameState.startAlert
+        ) {
+            Button("Solo"){
+                gameState.soloPlay = true
+            }
+            Button("Versus"){
+                gameState.soloPlay = false
+            }
+        }
+        .frame(maxWidth: 650, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         .onRotate { newOrientation in
             orientation = newOrientation
         }
     }
+}
+
+#Preview {
+    TicTacGridView(gameState: GameState())
 }

@@ -8,19 +8,62 @@
 import SwiftUI
 
 struct ContentView: View {
-    
     @StateObject var gameState = GameState()
-    @State private var orientation = UIDeviceOrientation.unknown
+    @State private var orientation = UIDeviceOrientation.portrait
     
     let borderSize = CGFloat(5)
     var body: some View {
-        Text("Turn: " + gameState.whoseTurn())
-            .font(.largeTitle)
-            .bold()
-        TicTacGridView()
-            .padding()
+        let ticTacGrid = TicTacGridView(gameState: gameState)
+        let turnO = Text(gameState.soloPlay == true ? "Your Turn": "Turn: O").font(.largeTitle).bold().opacity(gameState.whoseTurn() == " O " ? 1 : 0)
+        let turnX = Text("Turn: X").font(.largeTitle).bold().opacity(gameState.whoseTurn() == " X " ? 1 : 0)
+        Group{
+            if orientation == UIDeviceOrientation.portrait {
+                VStack {
+                    if gameState.soloPlay == true{
+                        turnO
+                        ticTacGrid
+                        turnX
+                            .opacity(0)
+                    } else if gameState.soloPlay == false{
+                        turnO
+                            .rotationEffect(.degrees(180))
+                        ticTacGrid
+                        turnX
+                    } else {
+                        turnO
+                            .opacity(0)
+                        ticTacGrid
+                        turnX
+                            .opacity(0)
+                    }
+                }
+            } else {
+                HStack {
+                    if gameState.soloPlay == true{
+                        turnO
+                        ticTacGrid
+                    } else if gameState.soloPlay == false{
+                        turnO
+                            .rotationEffect(.degrees(-90))
+                        ticTacGrid
+                        turnX
+                            .rotationEffect(.degrees(90))
+                    } else {
+                        turnO
+                            .opacity(0)
+                        ticTacGrid
+                        turnX
+                            .opacity(0)
+                    }
+                }
+            }
+        }
+        .onRotate { newOrientation in
+            orientation = newOrientation
+        }
     }
 }
+
 
 #Preview {
     ContentView()
