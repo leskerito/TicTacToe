@@ -1,10 +1,13 @@
 # Tic Tac Toe Game
 
-A simple Tic Tac Toe game built with SwiftUI. The game allows two players to play against each other by taking turns to place their respective tiles (X and O) on a 3x3 board, or to battle the computer.
+
+A simple Tic Tac Toe game built with SwiftUI. The game allows two players to play against each other by taking turns to place their respective tiles (X and O) on a 3x3 board.
+
 
 ## Features
 
 - Two-player mode: Players take turns to place X or O on the board.
+
 - Single Player mode: One player places circle against a random computer.
 - Displays the current player's turn.
 - Detects and announces the winner when a player gets three tiles in a row (vertically, horizontally, or diagonally).
@@ -17,6 +20,7 @@ A simple Tic Tac Toe game built with SwiftUI. The game allows two players to pla
 ![iPhone1](https://github.com/leskerito/TicTacToe/blob/opponent/Screenshots/iPhone%20Portrait.png)
 ![iPhone2](https://github.com/leskerito/TicTacToe/blob/opponent/Screenshots/iPhone%20Winning.png)
 ![iPhone3](https://github.com/leskerito/TicTacToe/blob/opponent/Screenshots/iPhone%20Start.png)
+
 
 ## How to Play
 
