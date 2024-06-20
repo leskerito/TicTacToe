@@ -162,6 +162,7 @@ class GameState: ObservableObject {
         winner = ""
         startAlert = true
         turn = Tile.circle
+        soloPlay = nil
     }
     
     func oneMore(){

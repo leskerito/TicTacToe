@@ -24,11 +24,17 @@ struct ContentView: View {
                         ticTacGrid
                         turnX
                             .opacity(0)
-                    } else {
+                    } else if gameState.soloPlay == false{
                         turnO
                             .rotationEffect(.degrees(180))
                         ticTacGrid
                         turnX
+                    } else {
+                        turnO
+                            .opacity(0)
+                        ticTacGrid
+                        turnX
+                            .opacity(0)
                     }
                 }
             } else {
@@ -36,13 +42,18 @@ struct ContentView: View {
                     if gameState.soloPlay == true{
                         turnO
                         ticTacGrid
-                    } else {
+                    } else if gameState.soloPlay == false{
                         turnO
                             .rotationEffect(.degrees(-90))
                         ticTacGrid
                         turnX
                             .rotationEffect(.degrees(90))
-
+                    } else {
+                        turnO
+                            .opacity(0)
+                        ticTacGrid
+                        turnX
+                            .opacity(0)
                     }
                 }
             }
