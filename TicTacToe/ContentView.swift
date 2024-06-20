@@ -14,23 +14,36 @@ struct ContentView: View {
     let borderSize = CGFloat(5)
     var body: some View {
         let ticTacGrid = TicTacGridView(gameState: gameState)
-        let turnO = Text("Turn: O").font(.largeTitle).bold().opacity(gameState.whoseTurn() == " O " ? 1 : 0)
+        let turnO = Text(gameState.soloPlay == true ? "Your Turn": "Turn: O").font(.largeTitle).bold().opacity(gameState.whoseTurn() == " O " ? 1 : 0)
         let turnX = Text("Turn: X").font(.largeTitle).bold().opacity(gameState.whoseTurn() == " X " ? 1 : 0)
         Group{
             if orientation == UIDeviceOrientation.portrait {
                 VStack {
-                    turnO
-                        .rotationEffect(.degrees(180))
-                    ticTacGrid
-                    turnX
+                    if gameState.soloPlay == true{
+                        turnO
+                        ticTacGrid
+                        turnX
+                            .opacity(0)
+                    } else {
+                        turnO
+                            .rotationEffect(.degrees(180))
+                        ticTacGrid
+                        turnX
+                    }
                 }
             } else {
                 HStack {
-                    turnO
-                        .rotationEffect(.degrees(90))
-                    ticTacGrid
-                    turnX
-                        .rotationEffect(.degrees(-90))
+                    if gameState.soloPlay == true{
+                        turnO
+                        ticTacGrid
+                    } else {
+                        turnO
+                            .rotationEffect(.degrees(-90))
+                        ticTacGrid
+                        turnX
+                            .rotationEffect(.degrees(90))
+
+                    }
                 }
             }
         }
@@ -39,6 +52,7 @@ struct ContentView: View {
         }
     }
 }
+
 
 #Preview {
     ContentView()
