@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E90DC2132C24272700826017 /* DeviceRotationViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90DC2122C24272700826017 /* DeviceRotationViewModifier.swift */; };
+		E90DC2152C24283400826017 /* TicTacGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90DC2142C24283400826017 /* TicTacGridView.swift */; };
 		E9C2EE0F2C234D1600683D53 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C2EE0E2C234D1600683D53 /* GameState.swift */; };
 		E9D95E3A2C2343DD00D144E7 /* TicTacToeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D95E392C2343DD00D144E7 /* TicTacToeApp.swift */; };
 		E9D95E3C2C2343DD00D144E7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D95E3B2C2343DD00D144E7 /* ContentView.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E90DC2122C24272700826017 /* DeviceRotationViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRotationViewModifier.swift; sourceTree = "<group>"; };
+		E90DC2142C24283400826017 /* TicTacGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacGridView.swift; sourceTree = "<group>"; };
 		E9C2EE0E2C234D1600683D53 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		E9D95E362C2343DD00D144E7 /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D95E392C2343DD00D144E7 /* TicTacToeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeApp.swift; sourceTree = "<group>"; };
@@ -99,8 +103,10 @@
 		E9D95E382C2343DD00D144E7 /* TicTacToe */ = {
 			isa = PBXGroup;
 			children = (
+				E90DC2122C24272700826017 /* DeviceRotationViewModifier.swift */,
 				E9D95E392C2343DD00D144E7 /* TicTacToeApp.swift */,
 				E9D95E3B2C2343DD00D144E7 /* ContentView.swift */,
+				E90DC2142C24283400826017 /* TicTacGridView.swift */,
 				E9C2EE0E2C234D1600683D53 /* GameState.swift */,
 				E9D95E642C23456800D144E7 /* Cell.swift */,
 				E9D95E3D2C2343DE00D144E7 /* Assets.xcassets */,
@@ -265,9 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E90DC2152C24283400826017 /* TicTacGridView.swift in Sources */,
 				E9D95E3C2C2343DD00D144E7 /* ContentView.swift in Sources */,
 				E9C2EE0F2C234D1600683D53 /* GameState.swift in Sources */,
 				E9D95E3A2C2343DD00D144E7 /* TicTacToeApp.swift in Sources */,
+				E90DC2132C24272700826017 /* DeviceRotationViewModifier.swift in Sources */,
 				E9D95E652C23456800D144E7 /* Cell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
