@@ -13,10 +13,11 @@ A simple Tic Tac Toe game built with SwiftUI. The game allows two players to pla
 
 ## Screenshots
 
-![iPad1](https://github.com/leskerito/TicTacToe/blob/main/Screenshots/iPad%20Portrait.png)
-![iPhone1](https://github.com/leskerito/TicTacToe/blob/main/Screenshots/iPhone%20Portrait.png)
-![iPhone2](https://github.com/leskerito/TicTacToe/blob/main/Screenshots/iPhone%20Winning.png)
-![iPhone3](https://github.com/leskerito/TicTacToe/blob/main/Screenshots/iPhone%20Start.png)
+![iPad1](https://github.com/leskerito/TicTacToe/blob/opponent/Screenshots/iPad%20Portrait.png)
+![iPhone1](https://github.com/leskerito/TicTacToe/blob/opponent/Screenshots/iPhone%20Portrait.png)
+![iPhone2](https://github.com/leskerito/TicTacToe/blob/opponent/Screenshots/iPhone%20Winning.png)
+![iPhone3](https://github.com/leskerito/TicTacToe/blob/opponent/Screenshots/iPhone%20Start.png)
+
 ## How to Play
 
 1. Player O starts the game.
